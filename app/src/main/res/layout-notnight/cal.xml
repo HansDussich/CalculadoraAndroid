@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/txtRespuesta"
+        android:layout_width="0dp"
+        android:layout_height="120dp"
+        android:gravity="end|bottom"
+        android:padding="16dp"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        android:background="#EFEFEF"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="0" />
+
+    <!-- Modificado para anclar a la parte inferior -->
+    <Button
+        android:id="@+id/btnCero"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#009688"
+        android:text="0"
+        android:textSize="20sp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btnDecimal"
+        app:layout_constraintHorizontal_weight="2" />
+
+    <Button
+        android:id="@+id/btnDecimal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#009688"
+        android:text="."
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@id/btnCero"
+        app:layout_constraintStart_toEndOf="@id/btnCero"
+        app:layout_constraintEnd_toStartOf="@id/btnIgual"
+        app:layout_constraintHorizontal_weight="1" />
+
+    <Button
+        android:id="@+id/btnIgual"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#3F51B5"
+        android:text="="
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@id/btnCero"
+        app:layout_constraintStart_toEndOf="@id/btnDecimal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_weight="1" />
+
+    <!-- Fila 1-3 ahora ligada a la fila 0 -->
+    <Button
+        android:id="@+id/btnUno"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#009688"
+        android:text="1"
+        android:textSize="20sp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@id/btnCero"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btnDos"
+        app:layout_constraintHorizontal_weight="1" />
+
+    <Button
+        android:id="@+id/btnDos"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#009688"
+        android:text="2"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@id/btnUno"
+        app:layout_constraintStart_toEndOf="@id/btnUno"
+        app:layout_constraintEnd_toStartOf="@id/btnTres"
+        app:layout_constraintHorizontal_weight="1" />
+
+    <Button
+        android:id="@+id/btnTres"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#009688"
+        android:text="3"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@id/btnUno"
+        app:layout_constraintStart_toEndOf="@id/btnDos"
+        app:layout_constraintEnd_toStartOf="@id/btnSuma"
+        app:layout_constraintHorizontal_weight="1" />
+
+    <Button
+        android:id="@+id/btnSuma"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#3F51B5"
+        android:text="+"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@id/btnUno"
+        app:layout_constraintStart_toEndOf="@id/btnTres"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_weight="1" />
+
+    <!-- Fila 4-6 ahora ligada a la fila 1-3 -->
+    <Button
+        android:id="@+id/btnCuatro"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#009688"
+        android:text="4"
+        android:textSize="20sp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@id/btnUno"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btnCinco"
+        app:layout_constraintHorizontal_weight="1" />
+
+    <Button
+        android:id="@+id/btnCinco"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#009688"
+        android:text="5"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@id/btnCuatro"
+        app:layout_constraintStart_toEndOf="@id/btnCuatro"
+        app:layout_constraintEnd_toStartOf="@id/btnSeis"
+        app:layout_constraintHorizontal_weight="1" />
+
+    <Button
+        android:id="@+id/btnSeis"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#009688"
+        android:text="6"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@id/btnCuatro"
+        app:layout_constraintStart_toEndOf="@id/btnCinco"
+        app:layout_constraintEnd_toStartOf="@id/btnResta"
+        app:layout_constraintHorizontal_weight="1" />
+
+    <Button
+        android:id="@+id/btnResta"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#3F51B5"
+        android:text="-"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@id/btnCuatro"
+        app:layout_constraintStart_toEndOf="@id/btnSeis"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_weight="1" />
+
+    <!-- Fila 7-9 ahora ligada a la fila 4-6 -->
+    <Button
+        android:id="@+id/btnSiete"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#009688"
+        android:text="7"
+        android:textSize="20sp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@id/btnCuatro"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btnOcho"
+        app:layout_constraintHorizontal_weight="1" />
+
+    <Button
+        android:id="@+id/btnOcho"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#009688"
+        android:text="8"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@id/btnSiete"
+        app:layout_constraintStart_toEndOf="@id/btnSiete"
+        app:layout_constraintEnd_toStartOf="@id/btnNueve"
+        app:layout_constraintHorizontal_weight="1" />
+
+    <Button
+        android:id="@+id/btnNueve"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#009688"
+        android:text="9"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@id/btnSiete"
+        app:layout_constraintStart_toEndOf="@id/btnOcho"
+        app:layout_constraintEnd_toStartOf="@id/btnPor"
+        app:layout_constraintHorizontal_weight="1" />
+
+    <Button
+        android:id="@+id/btnPor"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#3F51B5"
+        android:text="×"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@id/btnSiete"
+        app:layout_constraintStart_toEndOf="@id/btnNueve"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_weight="1" />
+
+    <!-- Ahora C y ÷ ligados a la fila 7-9 -->
+    <Button
+        android:id="@+id/btnLimpiar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#B41717"
+        android:text="C"
+        android:textSize="20sp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@id/btnSiete"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btnDividir"
+        app:layout_constraintHorizontal_weight="3" />
+
+    <Button
+        android:id="@+id/btnDividir"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#3F51B5"
+        android:text="÷"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@id/btnLimpiar"
+        app:layout_constraintStart_toEndOf="@id/btnLimpiar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_weight="1" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
