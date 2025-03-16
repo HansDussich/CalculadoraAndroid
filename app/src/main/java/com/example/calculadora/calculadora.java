@@ -107,9 +107,25 @@ public class calculadora {
             if (!numeroActual.isEmpty() && !operacion.isEmpty()) {
                 double segundoNumero = Double.parseDouble(numeroActual);
                 double resultado = calcularResultado(primerNumero, segundoNumero, operacion);
-                txtRespuesta.setText(String.valueOf(resultado));
-                numeroActual = String.valueOf(resultado);
-                operacion = "";
+
+                if (Double.isInfinite(resultado) || Double.isNaN(resultado)) {
+                    txtRespuesta.setText("Error");
+                    // Reinicia el estado como al limpiar
+                    numeroActual = "";
+                    operacion = "";
+                    primerNumero = 0;
+                    operacionPresionada = false;
+                } else {
+                    // Muestra el resultado normalmente
+                    if (resultado == (int) resultado) {
+                        txtRespuesta.setText(String.valueOf((int) resultado));
+                        numeroActual = String.valueOf((int) resultado);
+                    } else {
+                        txtRespuesta.setText(String.valueOf(resultado));
+                        numeroActual = String.valueOf(resultado);
+                    }
+                    operacion = "";
+                }
             }
         });
     }
@@ -122,7 +138,7 @@ public class calculadora {
             case "-": return num1 - num2;
             case "*": return num1 * num2;
             //Si el numero 2 es 0 = no se puede dividir entre 0 y se muestra 0
-            case "/": return (num2 != 0) ? num1 / num2 : 0;
+            case "/": return num1 / num2;
             default: return 0;
         }
     }
